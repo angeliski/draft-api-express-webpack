@@ -1,0 +1,37 @@
+{
+  "name": "draft-api-express-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && npm run watch",
+    "build": "npm run build-ts",
+    "build-ts": "tsc",
+    "serve": "node dist/index.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",    
+    "watch-ts": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeliski/draft-api-express-webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angeliski/draft-api-express-webpack/issues"
+  },
+  "homepage": "https://github.com/angeliski/draft-api-express-webpack#readme",
+  "devDependencies": {
+    "@types/express": "^4.0.37",
+    "awesome-typescript-loader": "^3.2.3",
+    "concurrently": "^3.5.0",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
