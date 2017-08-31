@@ -19,17 +19,22 @@ class MysqlDatabase implements Database {
 
 export default ({ provider }: { provider: DatabaseProvider }): Database => {
   console.info('Init Database module')
-  console.info('Provider', DatabaseProvider[provider])
-  return strategy.get(provider)
+  console.info('Provider', provider)
+  const database = strategy.get(provider)
+
+  if (database)
+    return strategy.get(provider)
+
+  throw 'Unknown provider ' + provider
 }
 
 export interface Database {
-  save (): Promise<Object>
+  save(): Promise<Object>
 }
 
 export enum DatabaseProvider {
-    MYSQL,
-    FIREBASE
+  MYSQL = 'MYSQL',
+  FIREBASE = 'FIREBASE'
 }
 
 const strategy = new Map<DatabaseProvider, Database>()

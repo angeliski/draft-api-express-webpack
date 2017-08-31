@@ -1,0 +1,17 @@
+{
+   // The plugin looks for a .jsbeautifyrc file in the same directory as the
+   // source file you're prettifying (or any directory above if it doesn't exist,
+   // or in your home folder if everything else fails) and uses those options
+   // along the default ones.
+
+   // Details: https://github.com/victorporof/Sublime-HTMLPrettify#using-your-own-jsbeautifyrc-options
+   // Documentation: https://github.com/einars/js-beautify/
+   "js": {
+    "indent_char": " ",
+    "indent_size": 2,
+    "end_with_newline": true,
+    "space_after_anon_function": true, // Should the space before an anonymous function's parens be added, "function()" vs "function ()"
+    "break_chained_methods": true, // Break chained method calls across subsequent lines
+    "allowed_file_extensions": ["js", "json", "jshintrc", "jsbeautifyrc"]
+   }
+}
