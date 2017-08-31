@@ -1,7 +1,7 @@
-import * as Promise from 'bluebird';
-import database, { DatabaseProvider } from './database';
-import api from './api';
-import startApp from './server';
+import * as Promise from 'bluebird'
+import database, { DatabaseProvider } from './database'
+import api from './api'
+import startApp from './server'
 
 
 module.exports = Promise
@@ -13,5 +13,5 @@ module.exports = Promise
   .then(startApp)
 
   .catch((error) => {
-    console.log('erro', error);
-  });
+    console.log('erro', error)
+  })
